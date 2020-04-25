@@ -1,0 +1,36 @@
+{
+  "name": "lyrics-react",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "react-scripts start index.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-http": "^1.5.17",
+    "axios": "^0.19.2",
+    "graphql": "^15.0.0",
+    "graphql-tag": "^2.10.3",
+    "react": "^16.10.2",
+    "react-apollo": "^3.1.5",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0"
+  },
+  "devDependencies": {},
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
