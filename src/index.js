@@ -6,8 +6,10 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
+import "./style/style.css";
+
 // COMPONENTS
-import SongList from "./components/SongList";
+import SongList from "./components/SongList/SongList";
 
 const httpLink = new HttpLink({
   uri: "http://localhost:4000/graphql",
