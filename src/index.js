@@ -29,7 +29,7 @@ const Root = () => {
       <Router>
         <Route exact path="/" component={SongList} />
         <Switch>
-          <Route exact path="/song/new" component={SongCreate}></Route>
+          <Route exact path="/songs/new" component={SongCreate}></Route>
         </Switch>
       </Router>
     </ApolloProvider>

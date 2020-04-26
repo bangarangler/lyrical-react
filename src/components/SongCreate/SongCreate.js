@@ -1,24 +1,37 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
+import { Link, useHistory } from "react-router-dom";
 import gql from "graphql-tag";
 
 import styles from "./SongCreate.module.css";
 
 const SongCreate = () => {
   const [addSong, { data }] = useMutation(ADD_SONG);
+  const history = useHistory();
   const [songTitle, setSongTitle] = useState("");
 
   const submitNewSong = (e) => {
     e.preventDefault();
-    addSong({ variables: { title: songTitle } });
+    addSong({ variables: { title: songTitle } })
+      .then(() => {
+        setSongTitle("");
+        history.push("/");
+      })
+      .catch((error) => {
+        console.log({ error });
+      });
   };
 
   return (
-    <div>
+    <div className={styles.container}>
+      <Link to="/" className={styles.backLink}>
+        Back
+      </Link>
       <h3>Create a New Song</h3>
-      <form onSubmit={submitNewSong}>
-        <label>Song Title:</label>
+      <form className={styles.form} onSubmit={submitNewSong}>
+        <label className={styles.label}>Song Title:</label>
         <input
+          className={styles.input}
           type="text"
           value={songTitle}
           onChange={(e) => setSongTitle(e.target.value)}

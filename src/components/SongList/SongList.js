@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+import { Link } from "react-router-dom";
 // import { graphql } from "react-apollo";
 
 import styles from "./SongList.module.css";
@@ -29,7 +30,14 @@ const SongList = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>error</p>;
-  return <ul className={styles.collection}>{renderSongs()}</ul>;
+  return (
+    <div className={styles.collection__container}>
+      <ul className={styles.collection}>{renderSongs()}</ul>
+      <Link to="/songs/new" className={styles.collection__link}>
+        +
+      </Link>
+    </div>
+  );
 };
 
 export default SongList;

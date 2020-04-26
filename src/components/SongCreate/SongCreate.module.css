@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+}
+
+.backLink {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: lightblue;
+  cursor: pointer;
+}
+
+.form {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.label {
+  /* border: 1px solid aqua; */
+  color: gray;
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+.input {
+  /* border: 1px solid red; */
+  width: 100%;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  border: none;
+  border-bottom: 3px solid aqua;
+  padding: 15px;
+}
