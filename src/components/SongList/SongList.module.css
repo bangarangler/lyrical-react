@@ -1,18 +1,19 @@
 .collection {
+  list-style: none;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.collectionItem {
   background: white;
   width: 90%;
   padding: 15px;
   /* border: 1px solid gray; */
   box-shadow: 0 0 4px gray;
   margin: 0 auto;
-  list-style: none;
-  margin-top: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.collectionItem {
   color: #3d3d3d;;
   font-size: 1.8rem;
 }
