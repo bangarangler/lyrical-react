@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { Link, useHistory } from "react-router-dom";
 import gql from "graphql-tag";
+import { FETCH_SONGS } from "../../queries/fetchSongs";
 
 import styles from "./SongCreate.module.css";
 
@@ -12,7 +13,10 @@ const SongCreate = () => {
 
   const submitNewSong = (e) => {
     e.preventDefault();
-    addSong({ variables: { title: songTitle } })
+    addSong({
+      variables: { title: songTitle },
+      refetchQueries: [{ query: FETCH_SONGS }],
+    })
       .then(() => {
         setSongTitle("");
         history.push("/");

@@ -10,7 +10,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import "./style/style.css";
 
 // COMPONENTS
-import App from "./components/App/App";
+// import App from "./components/App/App";
 import SongList from "./components/SongList/SongList";
 import SongCreate from "./components/SongCreate/SongCreate";
 

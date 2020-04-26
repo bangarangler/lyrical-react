@@ -1,19 +1,19 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
+// import gql from "graphql-tag";
 import { Link } from "react-router-dom";
-// import { graphql } from "react-apollo";
+import { FETCH_SONGS } from "../../queries/fetchSongs";
 
 import styles from "./SongList.module.css";
 
-const FETCH_SONGS = gql`
-  query fetchSongs {
-    songs {
-      id
-      title
-    }
-  }
-`;
+// const FETCH_SONGS = gql`
+//   query fetchSongs {
+//     songs {
+//       id
+//       title
+//     }
+//   }
+// `;
 
 const SongList = () => {
   const { loading, error, data } = useQuery(FETCH_SONGS);
