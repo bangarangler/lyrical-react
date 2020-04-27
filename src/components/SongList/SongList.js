@@ -7,7 +7,7 @@ import { FETCH_SONGS } from "../../queries/fetchSongs";
 import styles from "./SongList.module.css";
 
 const SongList = () => {
-  const { loading, error, data } = useQuery(FETCH_SONGS);
+  const { loading, error, data, updateQuery } = useQuery(FETCH_SONGS);
   const [deleteSong] = useMutation(DELETE_SONG);
 
   const onSongDelete = (songId) => {
