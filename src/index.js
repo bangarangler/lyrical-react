@@ -22,6 +22,7 @@ const httpLink = new HttpLink({
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: httpLink,
+  dataIdFromObject: (o) => o.id,
 });
 
 const Root = () => {

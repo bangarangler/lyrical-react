@@ -11,7 +11,10 @@ import styles from "./SongDetail.module.css";
 
 const SongDetail = () => {
   const { id } = useParams();
-  const { loading, error, data, refetch } = useQuery(FETCH_SINGLE_SONG, {
+  // const { loading, error, data, refetch } = useQuery(FETCH_SINGLE_SONG, {
+  //   variables: { id },
+  // });
+  const { loading, error, data } = useQuery(FETCH_SINGLE_SONG, {
     variables: { id },
   });
 
@@ -26,7 +29,8 @@ const SongDetail = () => {
       </Link>
       <h3>{song.title}</h3>
       <LyricList lyrics={song.lyrics} />
-      <LyricCreate songId={song.id} refetch={refetch} />
+      {/* <LyricCreate songId={song.id} refetch={refetch} /> */}
+      <LyricCreate songId={song.id} />
     </div>
   );
 };
