@@ -26,6 +26,12 @@
   justify-content: space-between;
 }
 
+.collectionItem__link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .deleteSpan {
   cursor: pointer;
   background: orangered;

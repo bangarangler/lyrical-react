@@ -1,0 +1,16 @@
+.songDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+}
+
+.backLink {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: lightblue;
+  cursor: pointer;
+  margin-top: 15px;
+}

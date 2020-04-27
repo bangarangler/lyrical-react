@@ -21,7 +21,9 @@ const SongList = () => {
     return data.songs.map(({ id, title }) => {
       return (
         <li key={id} className={styles.collectionItem}>
-          {title}
+          <Link className={styles.collectionItem__link} to={`/songs/${id}`}>
+            {title}
+          </Link>
           <span onClick={() => onSongDelete(id)} className={styles.deleteSpan}>
             X
           </span>
