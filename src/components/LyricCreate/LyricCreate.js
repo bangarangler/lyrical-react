@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/react-hooks";
 
 import styles from "./LyricCreate.module.css";
 
-const LyricCreate = ({ songId }) => {
+const LyricCreate = ({ songId, refetch }) => {
   const [addLyricToSong] = useMutation(ADD_LYRICS);
   const [content, setContent] = useState("");
 
@@ -12,6 +12,7 @@ const LyricCreate = ({ songId }) => {
     e.preventDefault();
     addLyricToSong({ variables: { content, songId } }).then(() => {
       setContent("");
+      refetch();
     });
   };
 
