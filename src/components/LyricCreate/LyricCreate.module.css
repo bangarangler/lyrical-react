@@ -1,0 +1,21 @@
+.lyricCreate__form {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid purple; */
+  width: 100%;
+}
+
+.lyricCreate__label {
+  /* border: 1px solid limegreen; */
+  font-size: 1.5rem;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.lyricCreate__input {
+  /* border: 1px solid hotpink; */
+  font-size: 2rem;
+  padding: 15px;
+  border: none;
+  border-bottom: 3px solid aqua;
+}
