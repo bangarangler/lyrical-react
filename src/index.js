@@ -13,6 +13,7 @@ import "./style/style.css";
 // import App from "./components/App/App";
 import SongList from "./components/SongList/SongList";
 import SongCreate from "./components/SongCreate/SongCreate";
+import SongDetail from "./components/SongDetail/SongDetail";
 
 const httpLink = new HttpLink({
   uri: "http://localhost:4000/graphql",
@@ -30,6 +31,7 @@ const Root = () => {
         <Route exact path="/" component={SongList} />
         <Switch>
           <Route exact path="/songs/new" component={SongCreate}></Route>
+          <Route exact path="/songs/:id" component={SongDetail} />
         </Switch>
       </Router>
     </ApolloProvider>
