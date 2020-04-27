@@ -1,28 +1,30 @@
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-// import gql from "graphql-tag";
+import { useQuery, useMutation } from "@apollo/react-hooks";
+import gql from "graphql-tag";
 import { Link } from "react-router-dom";
 import { FETCH_SONGS } from "../../queries/fetchSongs";
 
 import styles from "./SongList.module.css";
 
-// const FETCH_SONGS = gql`
-//   query fetchSongs {
-//     songs {
-//       id
-//       title
-//     }
-//   }
-// `;
-
 const SongList = () => {
   const { loading, error, data } = useQuery(FETCH_SONGS);
+  const [deleteSong] = useMutation(DELETE_SONG);
+
+  const onSongDelete = (songId) => {
+    deleteSong({
+      variables: { id: songId },
+      refetchQueries: [{ query: FETCH_SONGS }],
+    });
+  };
 
   const renderSongs = () => {
-    return data.songs.map((s) => {
+    return data.songs.map(({ id, title }) => {
       return (
-        <li key={s.id} className={styles.collectionItem}>
-          {s.title}
+        <li key={id} className={styles.collectionItem}>
+          {title}
+          <span onClick={() => onSongDelete(id)} className={styles.deleteSpan}>
+            X
+          </span>
         </li>
       );
     });
@@ -40,4 +42,11 @@ const SongList = () => {
   );
 };
 
+const DELETE_SONG = gql`
+  mutation DeleteSong($id: ID!) {
+    deleteSong(id: $id) {
+      id
+    }
+  }
+`;
 export default SongList;

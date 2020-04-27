@@ -21,6 +21,22 @@
   margin: 0 auto;
   color: #3d3d3d;;
   font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deleteSpan {
+  cursor: pointer;
+  background: orangered;
+  border-radius: 50%;
+  color: white;
+  /* padding: 8px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
 }
 
 .collection__link {
