@@ -10,7 +10,9 @@ const LyricCreate = ({ songId }) => {
 
   const handleSubmitLyric = (e) => {
     e.preventDefault();
-    addLyricToSong({ variables: { content, songId } });
+    addLyricToSong({ variables: { content, songId } }).then(() => {
+      setContent("");
+    });
   };
 
   return (

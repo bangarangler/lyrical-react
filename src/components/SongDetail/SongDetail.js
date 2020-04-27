@@ -2,7 +2,10 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { useParams, Link } from "react-router-dom";
 import { FETCH_SINGLE_SONG } from "../../queries/fetchSingleSong";
+
+// COMPONENTS
 import LyricCreate from "../LyricCreate/LyricCreate";
+import LyricList from "../LyricList/LyricList";
 
 import styles from "./SongDetail.module.css";
 
@@ -22,6 +25,7 @@ const SongDetail = () => {
         Back
       </Link>
       <h3>{song.title}</h3>
+      <LyricList lyrics={song.lyrics} />
       <LyricCreate songId={song.id} />
     </div>
   );

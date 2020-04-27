@@ -5,6 +5,10 @@ export const FETCH_SINGLE_SONG = gql`
     song(id: $id) {
       id
       title
+      lyrics {
+        id
+        content
+      }
     }
   }
 `;
