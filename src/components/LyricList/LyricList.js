@@ -14,7 +14,7 @@ const LyricList = ({ lyrics }) => {
       optimisticResponse: {
         __typename: "Mutation",
         likeLyric: {
-          id: id,
+          id,
           __typename: "LyricType",
           likes: likes + 1,
         },
