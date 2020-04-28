@@ -8,6 +8,7 @@ export const FETCH_SINGLE_SONG = gql`
       lyrics {
         id
         content
+        likes
       }
     }
   }
