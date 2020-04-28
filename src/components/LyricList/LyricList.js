@@ -8,8 +8,18 @@ import styles from "./LyricList.module.css";
 const LyricList = ({ lyrics }) => {
   const [likeLyric] = useMutation(LIKE_LYRIC);
 
-  const onLike = (id) => {
-    likeLyric({ variables: { id } });
+  const onLike = (id, likes) => {
+    likeLyric({
+      variables: { id },
+      optimisticResponse: {
+        __typename: "Mutation",
+        likeLyric: {
+          id: id,
+          __typename: "LyricType",
+          likes: likes + 1,
+        },
+      },
+    });
   };
 
   const renderLyrics = () => {
@@ -21,7 +31,7 @@ const LyricList = ({ lyrics }) => {
             <span>
               <TiThumbsUp
                 className={styles.thumbsUpIcon}
-                onClick={() => onLike(id)}
+                onClick={() => onLike(id, likes)}
               />
             </span>
             {likes}
